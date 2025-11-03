@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (민감 정보 포함)
+data/tokens_unified.json
+data/users.json
+data/exchange_api_keys.json
+data/*_api_keys.json
+data/*.json.backup*
+data/*.json.corrupted*
+config/exchange_api_keys.json
+config/api_config.json
+
+# Logs
+logs/*.log
+*.log
+scheduler.log
+scanner.log
+error.log
+
+# Backup files
+*.backup
+*.broken
+*.old
+*.temp
+*_backup_*.json
+*_corrupted_*.json
+
+# Test files
+test_*.py
+check_*.py
+debug_*.py
+verify_*.py
+
+# Development files
+*.bat
+*.ps1
+*.vbs
+cleanup_temp/
+
+# Environment
+.env
+.env.local
+
+# Railway
+.railway/

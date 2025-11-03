@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/crypto_dashboard.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    },
+    {
+      "src": "apps/night_watch_board.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    },
+    {
+      "src": "apps/simple_user_dashboard.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/admin",
+      "dest": "apps/crypto_dashboard.py"
+    },
+    {
+      "src": "/",
+      "dest": "apps/night_watch_board.py"
+    },
+    {
+      "src": "/user",
+      "dest": "apps/simple_user_dashboard.py"
+    }
+  ],
+  "env": {
+    "PYTHONIOENCODING": "utf-8",
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8"
+  }
+}
+

@@ -1,0 +1,35 @@
+{
+  "subscription_type": "free",
+  "subscription_start": null,
+  "subscription_end": null,
+  "last_free_update": null,
+  "free_update_interval_hours": 0.25,
+  "users": {},
+  "free": {
+    "main_board_interval_minutes": 15,
+    "watchlist_interval_minutes": 15,
+    "user_dashboard_interval_minutes": 120,
+    "micro_burst_limit_per_day": 10,
+    "watchlist_limit": 2
+  },
+  "premium": {
+    "main_board_interval_minutes": 15,
+    "watchlist_interval_minutes": 1,
+    "user_dashboard_interval_minutes": 1,
+    "micro_burst_limit_per_day": 9900,
+    "watchlist_limit": 32
+  },
+  "system": {
+    "monitoring_refresh_interval_seconds": 300,
+    "accumulation_interval_seconds": 60,
+    "micro_burst_duration_seconds": 5,
+    "micro_burst_fetch_interval_seconds": 0.10000000000000014
+  },
+  "pro": {
+    "main_board_interval_minutes": 15,
+    "watchlist_interval_minutes": 5,
+    "user_dashboard_interval_minutes": 5,
+    "micro_burst_limit_per_day": 999,
+    "watchlist_limit": 8
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "exchanges": {
+    "gateio": {
+      "enabled": true,
+      "spread_threshold": 2.000000000000001,
+      "spread_required": true,
+      "depth_threshold": 500.0,
+      "depth_required": true,
+      "volume_threshold": 10000.0,
+      "volume_required": false,
+      "last_scan_time": "2025-11-03T20:08:04.211345+00:00"
+    },
+    "mexc": {
+      "enabled": true,
+      "spread_threshold": 2.000000000000001,
+      "spread_required": true,
+      "depth_threshold": 1000.0,
+      "depth_required": true,
+      "volume_threshold": 10000.0,
+      "volume_required": false,
+      "last_scan_time": "2025-11-03T20:06:58.287513+00:00"
+    },
+    "kucoin": {
+      "enabled": true,
+      "spread_threshold": 2.000000000000001,
+      "spread_required": true,
+      "depth_threshold": 500.0,
+      "depth_required": true,
+      "volume_threshold": 10000.0,
+      "volume_required": false,
+      "last_scan_time": "2025-11-03T20:04:49.337700+00:00"
+    },
+    "bitget": {
+      "enabled": true,
+      "spread_threshold": 2.0,
+      "spread_required": true,
+      "depth_threshold": 500.0,
+      "depth_required": true,
+      "volume_threshold": 10000.0,
+      "volume_required": false,
+      "last_scan_time": "2025-11-03T20:02:31.850620+00:00"
+    }
+  },
+  "global": {
+    "default_scan_interval_hours": 4,
+    "default_history_days": 3,
+    "entry_history_days": 7,
+    "exit_history_days": 14,
+    "min_stay_days": 14
+  },
+  "scheduler": {
+    "enabled": true,
+    "scan_interval_hours": 2,
+    "accumulation_days": 5,
+    "next_scan_time": "2025-10-27T18:00:00+00:00",
+    "last_scan_time": "2025-11-03T09:42:58.575340+00:00",
+    "utc_base_hour": 0,
+    "data_merge_policy": "keep_existing",
+    "auto_start_on_boot": false,
+    "run_on_start": false
+  }
+}

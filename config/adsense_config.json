@@ -1,0 +1,34 @@
+{
+  "enabled": false,
+  "publisher_id": "",
+  "ad_units": {
+    "sidebar": {
+      "enabled": false,
+      "slot_id": "",
+      "style": {
+        "display": "block",
+        "width": "300px",
+        "height": "600px"
+      }
+    },
+    "top_banner": {
+      "enabled": false,
+      "slot_id": "",
+      "style": {
+        "display": "block",
+        "width": "728px",
+        "height": "90px"
+      }
+    },
+    "inline": {
+      "enabled": false,
+      "slot_id": "",
+      "style": {
+        "display": "block",
+        "width": "336px",
+        "height": "280px"
+      }
+    }
+  },
+  "note": "Google AdSense Publisher ID를 설정하고, 각 광고 단위의 Slot ID를 입력하세요. enabled를 true로 변경하면 활성화됩니다."
+}

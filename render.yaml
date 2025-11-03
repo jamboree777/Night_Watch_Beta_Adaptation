@@ -1,0 +1,71 @@
+services:
+  # 메인 웹 서비스 (Admin Dashboard)
+  - type: web
+    name: night-watch-admin
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m streamlit run apps/crypto_dashboard.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: LANG
+        value: en_US.UTF-8
+      - key: LC_ALL
+        value: en_US.UTF-8
+
+  # 메인보드 (Public)
+  - type: web
+    name: night-watch-main
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m streamlit run apps/night_watch_board.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: LANG
+        value: en_US.UTF-8
+      - key: LC_ALL
+        value: en_US.UTF-8
+
+  # 유저 대시보드
+  - type: web
+    name: night-watch-user
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m streamlit run apps/simple_user_dashboard.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: LANG
+        value: en_US.UTF-8
+      - key: LC_ALL
+        value: en_US.UTF-8
+
+  # 백그라운드 서비스: 스캐너 스케줄러
+  - type: worker
+    name: night-watch-scanner
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python services/scanner_scheduler.py start
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: LANG
+        value: en_US.UTF-8
+      - key: LC_ALL
+        value: en_US.UTF-8
+
+  # 백그라운드 서비스: 프리미엄 풀 수집기
+  - type: worker
+    name: night-watch-collector
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python services/premium_pool_collector.py --continuous
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: LANG
+        value: en_US.UTF-8
+      - key: LC_ALL
+        value: en_US.UTF-8
+

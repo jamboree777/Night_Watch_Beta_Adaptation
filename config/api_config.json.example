@@ -1,0 +1,6 @@
+{
+  "etherscan_api_key": "your_etherscan_api_key_here",
+  "bscscan_api_key": "your_bscscan_api_key_here",
+  "polygonscan_api_key": "your_polygonscan_api_key_here",
+  "note": "이 파일을 api_config.json으로 복사하고 실제 API 키를 입력하세요."
+}

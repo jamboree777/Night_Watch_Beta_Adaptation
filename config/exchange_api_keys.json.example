@@ -1,0 +1,45 @@
+{
+  "gateio": {
+    "keys": [
+      {
+        "id": "gateio_example",
+        "name": "Example Gate.io API Key",
+        "apiKey": "your_api_key_here",
+        "secret": "your_api_secret_here",
+        "expires_at": null,
+        "active": true,
+        "added_at": "2025-01-01T00:00:00+00:00",
+        "last_used": null,
+        "usage_count": 0,
+        "api_level": {
+          "tier": "basic",
+          "tier_name": "Basic API",
+          "description": "일반 토큰만 접근 가능",
+          "restricted_tokens_whitelist": []
+        }
+      }
+    ]
+  },
+  "mexc": {
+    "keys": [
+      {
+        "id": "mexc_example",
+        "name": "Example MEXC API Key",
+        "apiKey": "your_api_key_here",
+        "secret": "your_api_secret_here",
+        "expires_at": null,
+        "active": true,
+        "added_at": "2025-01-01T00:00:00+00:00",
+        "last_used": null,
+        "usage_count": 0
+      }
+    ]
+  },
+  "kucoin": {
+    "keys": []
+  },
+  "bitget": {
+    "keys": []
+  },
+  "note": "이 파일을 exchange_api_keys.json으로 복사하고 실제 API 키를 입력하세요."
+}
