@@ -41,6 +41,20 @@ services:
       - key: LC_ALL
         value: en_US.UTF-8
 
+  # 백그라운드 서비스: 스캔 코디네이터 (통합 스캔 관리)
+  - type: worker
+    name: night-watch-coordinator
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python services/scan_coordinator.py start
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: LANG
+        value: en_US.UTF-8
+      - key: LC_ALL
+        value: en_US.UTF-8
+
   # 백그라운드 서비스: 스캐너 스케줄러
   - type: worker
     name: night-watch-scanner
