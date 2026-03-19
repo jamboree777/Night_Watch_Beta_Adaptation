@@ -1092,18 +1092,28 @@ def scan_exchange(exchange_id, use_private_api=False):
         markets = ex.load_markets()
         
         # 현물만 필터링 (선물/스왑/옵션 제외)
+        # KRW 거래소(upbit, bithumb)는 /KRW 페어, coinbase는 /USD 페어도 포함
+        krw_exchanges = {"upbit", "bithumb"}
+        usd_exchanges = {"coinbase"}
+        ex_name = getattr(ex, 'id', '').lower()
+        if ex_name in krw_exchanges:
+            quote_filter = '/KRW'
+        elif ex_name in usd_exchanges:
+            quote_filter = '/USD'
+        else:
+            quote_filter = '/USDT'
         usdt_pairs = [
             symbol for symbol, market in markets.items()
-            if '/USDT' in symbol
+            if quote_filter in symbol
             and market.get('spot') == True
             and market.get('type') == 'spot'
         ]
-        
+
         # 레버리지 토큰 제외 (3L, 3S, 5L, 5S, 2L, 2S, UP, DOWN 등)
-        leverage_suffixes = ['3L/USDT', '3S/USDT', '5L/USDT', '5S/USDT', '2L/USDT', '2S/USDT', 
-                            'UP/USDT', 'DOWN/USDT', 'BULL/USDT', 'BEAR/USDT']
+        leverage_suffixes = ['3L/', '3S/', '5L/', '5S/', '2L/', '2S/',
+                            'UP/', 'DOWN/', 'BULL/', 'BEAR/']
         original_count = len(usdt_pairs)
-        usdt_pairs = [s for s in usdt_pairs if not any(s.endswith(suffix) for suffix in leverage_suffixes)]
+        usdt_pairs = [s for s in usdt_pairs if not any(suffix in s for suffix in leverage_suffixes)]
         leverage_excluded = original_count - len(usdt_pairs)
         if leverage_excluded > 0:
             print(f"   ⚠️ Excluded {leverage_excluded} leverage tokens ({len(usdt_pairs)} remaining)")
